@@ -16,6 +16,10 @@ class BlogsController < ApplicationController
     article = Article.find(params[:id])
     article.destroy if article.user_id === current_user.id
   end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
   
   private
   def blog_params

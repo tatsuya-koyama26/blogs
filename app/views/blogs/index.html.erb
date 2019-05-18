@@ -11,6 +11,7 @@
     <% if user_signed_in? %>
       <ul>
         <li><%= link_to '削除', "/#{article.id}", method: :delete %></li>
+        <li><%= link_to '編集', "/#{article.id}/edit", method: :get %></li>
       </ul>
     <% end %>
   </li>
