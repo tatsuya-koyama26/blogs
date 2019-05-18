@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/login' => 'blogs#login'      # ログイン画面
   delete '/:id' => 'blogs#destroy'    #削除機能
   get '/:id/edit' => 'blogs#edit'     #編集画面 
+  patch '/:id' => 'blogs#update'      #編集機能
 end
