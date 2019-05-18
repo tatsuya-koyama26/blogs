@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @article = Article.all
+    @article = Article.all.order("id DESC")
   end
 
   def new

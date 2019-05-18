@@ -7,7 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
     <% if user_signed_in? %>
+      <p class="name">ユーザー：<%= current_user.nickname %>さん</p>
       <div class="user_nav grid-6">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         <a class="post" href="/new">投稿する</a>
@@ -17,10 +21,7 @@
         <%= link_to "ログイン", new_user_session_path, class: 'post' %>
         <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
       </div>
-     <% end %>
-  </head>
-
-  <body>
+    <% end %>
     <%= yield %>
   </body>
 </html>
