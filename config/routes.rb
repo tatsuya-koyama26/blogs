@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/new' => 'blogs#new'           # 投稿画面
   post '/complete' => 'blogs#create'  # 投稿機能
   post '/login' => 'blogs#login'      # ログイン画面
+  delete '/:id' => 'blogs#destroy'    #削除機能
 end
