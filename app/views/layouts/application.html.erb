@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blogs</title>
+    <title>BLOG</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+ 
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <nav style="padding: 0 5px;" class="light-blue">
+      <div class="nav-wrapper ">
+        <a href="/" class="brand-logo center">BLOG</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/users/sign_in">Sing In</a></li>
+            <li><a href="/users/sign_up">Sing Up</a></li>
+        </ul>
+      </div>
+    </nav>
     <% if user_signed_in? %>
       <p class="name">ユーザー：<%= current_user.nickname %>さん</p>
       <div class="user_nav grid-6">
