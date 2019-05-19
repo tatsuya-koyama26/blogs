@@ -9,7 +9,7 @@
       <p><%= article.content %></p>
       <p><%= article.created_at %></p>
 
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user.id == article.user_id%>
         <ul>
           <li><%= link_to '削除', "/#{article.id}", method: :delete %></li>
           <li><%= link_to '編集', "/#{article.id}/edit", method: :get %></li>
