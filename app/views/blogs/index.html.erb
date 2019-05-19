@@ -1,19 +1,21 @@
-<ul class="list_article">
-  <% @article.each do |article| %>
-  <li>
-    <h2><%= article.title %></h2>
-    <% if article.image != "" %>
-      <p><img src="<%= article.image %>"></p>
-    <% end %>
-    <p><%= article.content %></p>
-    <p><%= article.created_at %></p>
+<div class="all_screen">
+  <ul class="list_article">
+    <% @article.each do |article| %>
+    <li>
+      <h2><%= article.title %></h2>
+      <% if article.image != "" %>
+        <p><img src="<%= article.image %>"></p>
+      <% end %>
+      <p><%= article.content %></p>
+      <p><%= article.created_at %></p>
 
-    <% if user_signed_in? %>
-      <ul>
-        <li><%= link_to '削除', "/#{article.id}", method: :delete %></li>
-        <li><%= link_to '編集', "/#{article.id}/edit", method: :get %></li>
-      </ul>
+      <% if user_signed_in? %>
+        <ul>
+          <li><%= link_to '削除', "/#{article.id}", method: :delete %></li>
+          <li><%= link_to '編集', "/#{article.id}/edit", method: :get %></li>
+        </ul>
+      <% end %>
+    </li>
     <% end %>
-  </li>
-  <% end %>
-</ul>
+  </ul>
+</div>
