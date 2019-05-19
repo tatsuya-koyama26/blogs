@@ -9,12 +9,12 @@ class BlogsController < ApplicationController
   end
 
   def create
-    Article.create(blog_params)
+    Article.create(title: blog_params[:title], image: blog_params[:image], content: blog_params[:content], user_id: current_user.id)
   end
 
   def destroy
     article = Article.find(params[:id])
-    article.destroy if article.user_id === current_user.id
+    article.destroy if article.user_id == current_user.id
   end
 
   def edit
